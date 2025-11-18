@@ -1,0 +1,142 @@
+.about-section {
+  min-height: 100vh;
+  background: radial-gradient(
+    circle at top center,
+    #082f4d 0%,
+    #082136 0%,
+    #000000 50%,
+    #000000 100%
+  );
+
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-left {
+  position: sticky;
+  top: 6rem;
+  height: 100%;
+  align-content: center;
+}
+
+.about-heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #ffffff;
+  font-family: 'Figtree', sans-serif;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.about-arrow {
+  display: inline-block;
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: #ffffff;
+  margin-left: 1rem;
+  cursor: default;
+  position: relative;
+}
+
+/* Keep the original arrow and behavior on desktop */
+@media (min-width: 969px) {
+  .about-arrow::after {
+    display: none;
+  }
+}
+
+/* On mobile/tablet, add automatic animation */
+@media (max-width: 968px) {
+  .about-arrow::after {
+    content: '↓';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    animation: arrowPulse 2s ease-in-out infinite;
+  }
+  .about-arrow {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    color: transparent;
+    position: relative;
+  }
+}
+
+@keyframes arrowPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scaleY(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scaleY(1.8);
+  }
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-text {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: auto !important;
+}
+
+.about-text strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .about-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-left {
+    position: static;
+  }
+
+  .about-heading {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 3rem 1rem;
+  }
+
+  .about-container {
+    gap: 1.5rem;
+  }
+}
+
