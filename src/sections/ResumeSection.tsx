@@ -7,6 +7,7 @@ import varunSquad from '../assets/images/varun-squad.jpeg';
 import varunFoodie from '../assets/images/varun-foodie.jpeg';
 import varunGym from '../assets/images/varun-gym.jpeg';
 import instagramIcon from '../assets/images/instagram.png';
+import githubIcon from '../assets/images/github.png';
 import linkedInIcon from '../assets/images/linkedIn.png';
 import reactIcon from '../assets/images/tools-react-icon.png';
 import gaIcon from '../assets/images/tools-ga-icon.png';
@@ -22,28 +23,86 @@ import swaggerIcon from '../assets/images/tools-swagger-icon.png';
 import GlassIcons from '../components/glass-icon/GlassIcons';
 import emailIcon from '../assets/images/tools-emailjs-icon.png';
 
-
 const ResumeSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const images = [varunProfessional, varunRugged, varunYoung, varunFoodie, varunGym, varunSquad];
-  const captions = ['Sprint planning face: calm externally 😌📅, dying internally 😭💀',
-    'Debugging life in the woods 🌲💻', 'Beta version of me: chubby 😄✨ but high performance ⚡',
-    'Cheat meal? No. This is a critical system update 🍟⚙️😌', 'Backend so strong even APIs feel safe 🔥💪💻',
-    'Squad = my favourite open-source project 😄👯‍♂️✨'];
-  const tools = [reactIcon, gaIcon, bootstrapIcon, redisIcon, tsIcon, emailIcon, posthogIcon, atlasIcon, notionIcon, linearIcon, postmanIcon, swaggerIcon];
-  const socialIcons = [{
-    icon: <img src={linkedInIcon} style={{width: '50px', height: '50px'}} alt="LinkedIn" />,
-    color: 'blue',
-    label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/varun-ram-453011236/',
-  },{
-    icon: <img src={instagramIcon} style={{width: '50px', height: '50px'}} alt="Instagram" />,
-    label: 'Instagram',
-    color: 'purple',
-    link: 'https://www.instagram.com/_ram.varun/',
-  }];
+  const images = [
+    varunProfessional,
+    varunRugged,
+    varunYoung,
+    varunFoodie,
+    varunGym,
+    varunSquad,
+  ];
+  const captions = [
+    'Sprint planning face: calm externally 😌📅, dying internally 😭💀',
+    'Debugging life in the woods 🌲💻',
+    'Beta version of me: chubby 😄✨ but high performance ⚡',
+    'Cheat meal? No. This is a critical system update 🍟⚙️😌',
+    'Backend so strong even APIs feel safe 🔥💪💻',
+    'Squad = my favourite open-source project 😄👯‍♂️✨',
+  ];
+  const tools = [
+    reactIcon,
+    gaIcon,
+    bootstrapIcon,
+    redisIcon,
+    tsIcon,
+    emailIcon,
+    posthogIcon,
+    atlasIcon,
+    notionIcon,
+    linearIcon,
+    postmanIcon,
+    swaggerIcon,
+  ];
+  const socialIcons = [
+    {
+      icon: (
+        <img
+          src={linkedInIcon}
+          style={{ width: '50px', height: '50px' }}
+          alt="LinkedIn"
+        />
+      ),
+      color: 'blue',
+      label: 'LinkedIn',
+      link: 'https://www.linkedin.com/in/varun-ram-453011236/',
+    },
+    {
+      icon: (
+        <img
+          src={instagramIcon}
+          style={{ width: '50px', height: '50px' }}
+          alt="Instagram"
+        />
+      ),
+      label: 'Instagram',
+      color: 'purple',
+      link: 'https://www.instagram.com/_ram.varun/',
+    },
+    {
+      icon: (
+        <img
+          src={githubIcon}
+          style={{ width: '50px', height: '50px' }}
+          alt="GitHub"
+        />
+      ),
+      label: 'GitHub',
+      color: 'black',
+      link: 'https://github.com/VarunRam7',
+    }
+  ];
 
+  const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'Varun_Ram_Resume.pdf'; // Name for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -87,14 +146,14 @@ const ResumeSection = () => {
 
               {/* Social Icons - Outside the card */}
               <div className="social-icons">
-                <GlassIcons items={socialIcons} className="custom-class"/>
+                <GlassIcons items={socialIcons} className="custom-class" />
               </div>
 
-            {/* Location Card */}
-            <div className="resume-card location-card">
-              <p className="card-label">Buffering in</p>
-              <h3 className="card-title">Coimbatore, Tamil Nadu</h3>
-            </div>
+              {/* Location Card */}
+              <div className="resume-card location-card">
+                <p className="card-label">Buffering in</p>
+                <h3 className="card-title">Coimbatore, Tamil Nadu</h3>
+              </div>
             </div>
           </div>
 
@@ -103,9 +162,9 @@ const ResumeSection = () => {
             <div className="sparkles">✨</div>
             <h3 className="cta-title">WANNA WORK TOGETHER?</h3>
             <p className="cta-subtitle">My resume is one click away</p>
-            <a href="/resume.pdf" download className="cta-button">
+            <button onClick={handleDownloadResume} className="cta-button">
               Download for free 😊
-            </a>
+            </button>
           </div>
 
           {/* Tools Card - Spans columns 2 & 3 */}
@@ -135,4 +194,3 @@ const ResumeSection = () => {
 };
 
 export default ResumeSection;
-

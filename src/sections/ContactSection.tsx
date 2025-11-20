@@ -38,7 +38,7 @@ const ContactSection = () => {
           </h2>
 
           <div className="contact-info">
-            <a href="mailto:vroon071001@gmail.com" className="contact-link">
+            <a href="mailto:vroon071001@gmail.com" className="contact-link font-cursive">
                 vroon071001@gmail.com
             </a>
             <a href="tel:+919629095843" className="contact-link">

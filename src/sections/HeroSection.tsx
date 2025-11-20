@@ -125,7 +125,7 @@ const HeroSection = () => {
         <div className="nav-logo"><GradientText textStyle={{ fontWeight: '900' }} colors={['#ff4ecd', '#b94bff', '#7f3bff', '#b94bff', '#ff4ecd']}>PORTFOLIO</GradientText></div>
         <div className="nav-links">
           <a href="#experience" className="nav-link" onClick={(e) => smoothScrollTo(e, '#experience')}>
-            Experience
+            Experience & Projects
           </a>
           <a href="#contact" className="nav-link" onClick={(e) => smoothScrollTo(e, '#contact')}>
             Contact

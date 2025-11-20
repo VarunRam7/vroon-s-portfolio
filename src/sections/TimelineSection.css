@@ -15,7 +15,7 @@
 }
 
 .timeline-header {
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -144,17 +144,18 @@
 
 .timeline-title {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #ffffff;
   font-family: 'Figtree', sans-serif;
   margin-bottom: 0.75rem;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .timeline-description {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
-  font-family: 'Figtree', sans-serif;
+  font-family: auto;
   line-height: 1.6;
   text-align: left;
 }

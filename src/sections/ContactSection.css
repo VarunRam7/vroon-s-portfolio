@@ -62,7 +62,7 @@
 .contact-link {
   font-size: clamp(1.2rem, 2.5vw, 2rem);
   color: rgba(255, 255, 255, 0.8);
-  font-family: 'Figtree', sans-serif;
+  font-family: cursive;
   text-decoration: none;
   position: relative;
   transition: all 0.3s ease;
